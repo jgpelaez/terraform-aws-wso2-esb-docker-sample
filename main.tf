@@ -62,7 +62,6 @@ resource "aws_elb" "web" {
   instances = ["${aws_instance.web.id}"]
 }
 
-
 resource "aws_instance" "web" {
   # The connection block tells our provisioner how to
   # communicate with the resource (instance)
@@ -103,5 +102,4 @@ provisioner "remote-exec" {
         "sh /tmp/run-esb.sh"
     ]
   }
-
 }
